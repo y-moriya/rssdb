@@ -12,7 +12,7 @@ app.post("/", async (c) => {
     return c.json({ registered: true });
   } else {
     await kv.set([url], new Date().toISOString());
-    return c.json({ registered: false });
+    return c.json({ registered: false, url: url });
   }
 })
 
